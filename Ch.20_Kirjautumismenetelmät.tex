@@ -2,5 +2,48 @@
 
 \section{Yksivaiheinen kirjautuminen}
 
+Yksi vaiheinen kirjautuminen (eng. single-factor authentication SFA)) koostuu yhdestä tarvittavasta kirjautumistavasta. Kirjautumistapoja on olemassa useita. Ne voidaan karkeasti jakaa kolmeen eri kategoriaan: 
+
+\begin{itemize}
+    \item Jotain mitä tiedät.Tällaisia vaihtoehtoja ovat salasana, PIN-koodi tai muita tietoja, joita voi tietää voidaan käyttää kirjautumistapana.
+    \item Jotain mitä omistat. Esimerkiksi käyntikortit, digitaaliset avaimet, puhelin ovat asioita joita voit omistaa.
+    \item Jotain mitä olet. Ihmisten yksilöllisiä asioita ja kehon osia voidaan käyttää kirjautumistapana. Sormenjälki, kasvot, DNA ja ääni.
+\end{itemize}
+Yksi vaiheinen kirjautuminen ei yksinään ole turvallinen vaihtoehto. Pelkästään salasanan käyttäminen ei ole turvallista. Salasanoja on mahdollista arvata. Riippuen tietokoneen tehosta salasanoja on mahdollista arvata 10 000–1 000 000 000 salasanaa sekunnissa. Riippuen salasanan pituudesta ja merkeistä on salasana mahdollista arvata jopa muutamassa minuutissa. (Brute Force Attacks: What, How, Why?). Toinen turvallisuus riski liittyy vuotaneisiin salasanoihin. Tietoturva-asiantuntija Tony Huntin ylläpitämä sivusto haveibeenpwned.com on kerännyt yhteen paikkaan vuotaneita salasanoja. Kirjoitus hetkellä 9.2.22 vuotaneita verkkosivuja on 582 ja vuotaneita käyttäjätunnuksia 11,7 miljardia. (Have I Been Pwned: Check if your email has been) Hyökkääjät voivat käyttää näitä vuotaneita salasanoja hyväkseen. Pelkästään salasanalla suojaus ei ole turvallista. Tämän takia kaksi vaiheista kirjautumista on alettu käyttämään laajemmin. 
 
 \section{Kaksivaiheinen kirjautuminen}
+Kaksivaiheinen kirjautuminen (eng. Two-factor authentication (2FA)) on kahden edellä mainitun yksivaiheisen kirjautumisen yhdistelmä. Kaksi vaiheisessa kirjautumisessa yhdistetään kaksi eri kirjautumistapaa paremman tietosuojan takia. 
+Useat verkko palvelut tarjoavat kaksoisvarmennetta käyttäjille käytettäväksi. Osa yrityksistä jopa vaativat kaikkia käyttäjiä käyttämään kaksi vaiheista tunnistautumista. Esimerkiksi Google ilmoitti toukokuussa 2021 pian vaatimaan kaikkia käyttäjiä käyttämään kaksi vaiheista tunnistautumista. \citep{future_without_passwords}
+
+
+Kaksi vaiheisia tunnestautumistapoja on useita erilaisia. 
+
+
+\begin{itemize}
+    \item SMS varmenne
+    
+    Kirjautumiseen vaaditaan salasana. Salasanan syötön jälkeen käyttäjälle lähetetään tekstiviesti, joka sisältää kertakäyttöisen koodi. Syöttämällä kertakäyttöisen koodin käyttäjä pääsee kirjautumaan sisälle. Jotkin yritykset tarjoavat myös soitto mahdollisuutta, jossa automaattinen lukija lukee koodin ääneen. 
+    \item Ajan perusteella luodut kertakäyttöiset koodit (TOTP)
+    
+    Palvelun tarjooja antaa salaisen avaimet. Salainen avain tallennetaan muistiin esimerkiksi siihen tarkoitettuun ohjelmaa. Salaisen avaimen ja kelloajan perusteella luodaan kertakäyttöinen koodi.  Kertakäyttöinen koodi päivittyy valitun ajan välein esim. 30 sekunnin välein. Kuten SMS varmenteessa ensiksi syötetään salasana, jonka jälkeen mobiilisovelluksen luoma kertakäyttöinen koodi. Tähän tarkoitettuja mobiilisovelluksia on tarjolla useita esimerkiksi google Authenticator, Microsoft Authenticator, LastPass Authenticator. (The Best Authenticator Apps for 2022 - PCMag UK) Tästä menetelmästä käytetään englannin kielistä lyhennettä TOTP, joka tarkoittaa time-based one-time password
+    
+    \item Sähköposti
+    
+    Kaksoisvarmentaminen voidaan myös toteuttaa sähköpostin avulla. Sähköpostiin voi tulla kertakäyttöinen koodi, joka sitten syötetään. Toinen vaihtoehto on sähköpostiin tuleva linkki, jonka kautta pääsee kirjautumaan. 
+\end{itemize}
+
+\section{Monivaiheinen tunnistautuminen}
+
+Monivaiheinen tunnistautuminen (eng. Multi-factor authentication (MFA)) koostuu nimensä mukaisesti useammasta tunnistautumisen vaiheesta. Se voi koostua kahdesta tunnistautumisen vaiheesta samalla tavalla kuin kaksi vaiheinen tunnistautuminen. Tämän lisäksi se voi koostua kaikista kolmesta tunnistautumisen tavasta. (What's the Difference Between MFA and 2FA)
+
+Monivaiheisia tunnistautumistapoja
+
+\begin{itemize}
+    \item Fyysinen avain
+    
+    Fyysinen avain yksi vaihtoehto kirjautumiseen. Fyysinen avain voi olla esimerkiksi usb tikku. Kirjautuminen tapahtuu liittämällä usb tikku tietokoneeseen. NFC avulla fyysistä avainta voisi käyttää puhelimella. Tällainen fyysinen avain ei tarvitse salasanojen tai muiden koodien kirjoittamista.
+    
+    \item Mobiilisovellus
+    
+    Kaksoisvarmenne voidaan myös suorittaa mobiilisovelluksella. Mobiilisovellukseen tulee ilmoitus, kun yritetään kirjautua tilille. Tämän jälkeen mobiilisovelluksessa voi valita hyväksyykö kirjautumisen vai ei. Esimerkiksi Google ja Microsoft tarjoavat mobiilisovelluksella toimivaa kaksoisvarmennetta. 
+\end{itemize}

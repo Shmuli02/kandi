@@ -18,7 +18,7 @@
 %%      algorithms-track-2020 = Algorithms study track
 %%      networking-track-2020 = Networking study track
 
-\documentclass[finnish,twoside,censored,tkt]{HYthesisML} 
+\documentclass[finnish,oneside,censored,tkt]{HYthesisML} 
 %\documentclass[english,twoside,censored,tkt]{HYthesisML} 
 
 % If wanted, open new chapters only at right page.
@@ -37,9 +37,9 @@
 
 %% Reference style: select one 
 %% for APA = Harvard style = authoryear -> (Einstein, 1905) use:
-\usepackage[style=authoryear,bibstyle=authoryear,backend=biber,natbib=true,maxnames=99,maxcitenames=2,uniquelist=minyear,giveninits=true,uniquename=mininit]{biblatex}
+%\usepackage[style=authoryear,bibstyle=authoryear,backend=biber,natbib=true,maxnames=99,maxcitenames=2,uniquelist=minyear,giveninits=true,uniquename=mininit]{biblatex}
 %% for numeric = Vancouver style -> [1] use:
-%\usepackage[style=numeric,bibstyle=numeric,backend=biber,natbib=true,maxbibnames=99,giveninits=true,uniquename=init]{biblatex}
+\usepackage[style=numeric,bibstyle=numeric,backend=biber,natbib=true,maxbibnames=99,giveninits=true,uniquename=init]{biblatex}
 
 
 \addbibresource{bibliography.bib}
@@ -85,7 +85,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Set up personal information for the title page and the abstract form.
 %% Replace parameters with your information.
-\title{Title}
+\title{Kirjautumismenetelmät}
 
 \author{Samuli Kaleva}
 \date{\today}
@@ -96,7 +96,7 @@
 % For MSc theses, the terms have somehow changed to supervisors and examiners, denoting BSc level advisors and supervisors. An unfortunate mismatch for now. 
 % Advisors for BSc theses and supervisors for MSc theses are the first contacts, supervisors for BSc theses and examiners for MSc theses are less visible but are responsible on % grading the works. 
 
-\supervisors{Prof.~D.U.~Mind, Dr.~O.~Why}
+\supervisors{FT. Lea Kutvonen}
 
 \keywords{Authentication}
 \additionalinformation{\translate{\track}}
@@ -159,7 +159,7 @@
 
 % Place ToC
 %\newpage
-%\mytableofcontents
+\mytableofcontents
 
 \mainmatter
 
@@ -181,8 +181,8 @@
 
 \include{Ch.10_Johdanto}
 \include{Ch.20_Kirjautumismenetelmät}
-\include{Ch.40_Vertailu}
 \include{Ch.45_Turvallisuus}
+\include{Ch.40_Vertailu}
 \include{Ch.50_Tulevaisuus}
 \include{Ch.70_Yhteenveto}
 

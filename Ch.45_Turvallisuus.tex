@@ -1,6 +1,18 @@
 \chapter{Turvallisuus\label{Turvallisuus}}
 
-Tässä kappaleessa käydään läpi SMS varmenteeseen ja TOTP:hen liittyviä turvallisuusriskejä. 
+Tässä kappaleessa keskitytään turvallisuuteen. Millaisia turvallisuus ongelmia ja riskejä liittyy varmentamismenetelmiin.
+
+Turvallisuus riskit voidaan jakaa kolmeen kategoriaan liittyen varmentamismenetelmään, joka vaarantuu:
+\begin{itemize}
+    \item Jotain mitä tiedät.
+    Hyökkääjä voi arvata salaisuuden, jonka tiedät. Hyökkääjä voi tarkkailla salaisuuden syöttämistä, löytää sen kirjoitettuna paperille tai haittaohjelman avulla.
+    \item Jotain mitä omistat.
+    Jotain mitä omistat voi hävitä tai hajota. Hyökkääjä voi myös varastaa tai kloonata laitteen. Hyökkääjä voi esimerkiksi saada pääsyn puhelimessa olevaan varmentamisohjelmaan. 
+    \item Jotain mitä olet.
+    Jotain mitä olet, voidaan kopioida. Hyökkääjä voi esimerkiksi kopioida sormenjäljen.
+\end{itemize}
+NIST (National Institute of Standards and Technology) on määritellyt esimerkkejä turvallisuus riskeistä ja mahdollisia menetelmiä näiden korjaamiseen. Turvallisuuteen liittyviä riskejä on runsaasti, joten kaikkia ei pystytä käymään läpi. Seuraavaksi tässä kappaleessa käydään läpi muutama turvallisuus riski liittyen SMS varmenteeseen ja TOTP:hen. \citep{NIST_800_63B}
+
 
 \section{SMS varmenne}
 \begin{figure}[ht]
